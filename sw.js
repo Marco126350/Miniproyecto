@@ -4,7 +4,7 @@ if (workbox) {
 	workbox.precaching.precacheAndRoute([]); 
 	/*Cache de imagenes en la carpeta, por ejemplo "others-, editamos a otras carpetas que se obtuvieron y configuramos en el archivo sw config.js */ 
 	workbox.routing.registerRoute( 
-		/(.*)others(.*)\.(?:pnglgifljpg)/, 
+		/(.*)others(.*)\.(?:png|gif|jpg)/, 
 		new workbox. strategies.CacheFirst({ 
 			cacheName: "images",
 			plugins:[
@@ -19,7 +19,7 @@ if (workbox) {
 	/*hacemos el contenido den JS Y CSS sean rapidos devolviendo los "assets" de la noche,mientras se asegura de que se actualizan en un segundo plano para su maximo uso */
 	workbox.routing.registerRoute( 
 	//Cache de JS, CSS y SCC 
-	/•*\.(?:cssljsIscss1)/, 
+	/•*\.(?:css|js|scss1)/, 
 	//Usamos el cache pero actualizasmos en segundo piano lo antes posible. 
 	new workbox.strategies.StaleWhileRevalidate({ 
 	//Usamos el nombre de un cache personalizado. 
