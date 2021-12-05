@@ -1,4 +1,4 @@
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-sw.js")
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-sw.js");
 if (workbox) { 
 	console.Log("Ajua! Workbox esta cargado! :) "); 
 	workbox.precaching.precacheAndRoute([]); 
@@ -19,7 +19,7 @@ if (workbox) {
 	/*hacemos el contenido den JS Y CSS sean rapidos devolviendo los "assets" de la noche,mientras se asegura de que se actualizan en un segundo plano para su maximo uso */
 	workbox.routing.registerRoute( 
 	//Cache de JS, CSS y SCC 
-	/•*\.(?:css|js|scss1)/, 
+	/.*\.(?:css|js|scss|)/, 
 	//Usamos el cache pero actualizasmos en segundo piano lo antes posible. 
 	new workbox.strategies.StaleWhileRevalidate({ 
 	//Usamos el nombre de un cache personalizado. 
